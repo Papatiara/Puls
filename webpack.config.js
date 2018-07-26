@@ -31,7 +31,7 @@ module.exports = {
         use: [
           {
             loader: 'html-loader',
-            options: { minimize: true },
+            options: {        minimize: true },
           },
         ],
       },
@@ -39,6 +39,15 @@ module.exports = {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
+          {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {name: './client/src'}  
+          }
+        ]
+      }
     ],
   },
   plugins: [
